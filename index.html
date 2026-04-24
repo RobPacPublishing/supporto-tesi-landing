@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Supporto Tesi è un servizio di supporto metodologico, strutturale, redazionale e di revisione per studenti universitari.">
+  <meta property="og:title" content="Supporto Tesi">
+  <meta property="og:description" content="Più metodo, più chiarezza, più supporto per lavorare meglio alla tua tesi.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/logo.png">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+  <title>Supporto Tesi</title>
+  <script type="text/javascript" src="https://me.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=FQ0xcMJ5E5J6zknUz2trkbVi7rVSsQp7Pmxsgblgx4VVo1QKYB0pGPOG_b252d8Pkd_rt4Q_Z60mXM6tDeQ8AxRC7xupcF--2ZNKTY_dxzw3mFfUssTOw0u4JOSeiigWDM9h4yvR58kzEqgjVxXBmU_mbXWSKDf91K5T74VP64EbVyiGJYDH6BzwmyErlKaPxreUW0jxZrEAR-94zgykZnHiJGuG7goupeHjFOMTnYTr7Tfbu5pgy04ROUGPMFuEbapqGbuq7hTtwltrVFIPHw" charset="UTF-8"></script><style>
+    :root {
+      --navy: #0b2341;
+      --gold: #b78a4a;
+      --bg: #f7f3ee;
+      --paper: #fffdf9;
+      --text: #1f2a36;
+      --muted: #5f6770;
+      --line: #e5dccf;
+      --danger-bg: #f7efe6;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--text);
+      background: var(--paper);
+      line-height: 1.55;
+    }
+    .wrap { width: min(1120px, calc(100% - 72px)); margin: 0 auto; }
+    header {
+      background: var(--navy);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 0;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .brand img {
+      display: block;
+      height: 58px;
+      width: auto;
+    }
+    footer .brand img {
+      height: 44px;
+    }
+    nav { display: flex; align-items: center; gap: 26px; flex-wrap: wrap; }
+    nav a { color: #fff; text-decoration: none; font-size: .98rem; opacity: .95; }
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: .2s ease;
+      border: 1px solid transparent;
+      font-size: .98rem;
+    }
+    .btn-primary { background: var(--navy); color: #fff; }
+    .btn-outline { border-color: var(--navy); color: var(--navy); background: transparent; }
+    .btn-gold { background: var(--gold); color: #fff; }
+    .btn:hover { transform: translateY(-1px); }
+
+    .contact-placeholders {
+      margin-top: 26px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .contact-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border: 1px solid rgba(255,255,255,.28);
+      border-radius: 999px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      background: rgba(255,255,255,.06);
+      font-size: .96rem;
+    }
+    .contact-chip span.icon {
+      font-size: 1.05rem;
+      line-height: 1;
+    }
+    .contact-note {
+      margin-top: 12px;
+      color: rgba(255,255,255,.78);
+      font-size: .92rem;
+      text-align: center;
+    }
+
+    .hero {
+      background: linear-gradient(180deg, var(--paper) 0%, #f8f4ef 100%);
+      padding: 56px 0 34px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      gap: 36px;
+      align-items: center;
+    }
+    .eyebrow {
+      color: var(--gold);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: .8rem;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: clamp(2.4rem, 4.8vw, 4.35rem);
+      line-height: 1.04;
+      margin: 0 0 18px;
+      color: var(--navy);
+      letter-spacing: -.02em;
+    }
+    .lead {
+      font-size: 1.32rem;
+      color: #333f4a;
+      margin: 0 0 18px;
+      max-width: 720px;
+    }
+    .hero p:last-of-type {
+      max-width: 690px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 28px;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .hero-visual {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      overflow: hidden;
+      background: #efe8dd;
+      box-shadow: 0 16px 34px rgba(11,35,65,.08);
+      position: relative;
+    }
+    .hero-visual img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      object-fit: cover;
+      object-position: center;
+    }
+    .hero-note {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      background: rgba(255,253,249,.94);
+      border: 1px solid rgba(183,138,74,.35);
+      border-radius: 16px;
+      padding: 14px 16px;
+      color: var(--navy);
+      font-size: .95rem;
+      box-shadow: 0 8px 18px rgba(11,35,65,.08);
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    section { padding: 64px 0; border-top: 1px solid #f0ebe4; }
+    h2 {
+      font-size: clamp(2rem, 3vw, 3rem);
+      color: var(--navy);
+      margin: 0 0 12px;
+      text-align: center;
+    }
+    .section-intro {
+      max-width: 760px;
+      margin: 0 auto 28px;
+      text-align: center;
+      color: var(--muted);
+    }
+    .compat-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 28px;
+      align-items: start;
+    }
+    .soft-box, .warn-box, .card, .faq-item {
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      box-shadow: 0 8px 20px rgba(11,35,65,.04);
+    }
+    .soft-box { padding: 26px; }
+    .warn-box { padding: 26px; background: var(--danger-bg); border-color: #e2c7a4; }
+    .mini-icons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .mini-icons .mini {
+      padding: 14px 10px;
+      text-align: center;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+      color: var(--navy);
+      font-size: .95rem;
+      min-height: 86px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+    }
+    .mini .icon { color: var(--gold); font-size: 1.35rem; }
+    .cards-6 {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 16px;
+    }
+    .card { padding: 20px 16px; text-align: center; }
+    .card .icon { font-size: 2rem; color: var(--gold); margin-bottom: 10px; }
+    .card h3 { font-size: 1.05rem; color: var(--navy); margin: 0 0 8px; }
+    .card p { margin: 0; color: var(--muted); font-size: .94rem; }
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+      margin-top: 30px;
+      position: relative;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 10%;
+      right: 10%;
+      top: 28px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), #dfcfb8, var(--gold));
+      z-index: 0;
+    }
+    .step { position: relative; z-index: 1; text-align: center; padding-top: 4px; }
+    .step .num {
+      width: 48px; height: 48px; margin: 0 auto 14px; border-radius: 999px;
+      background: var(--navy); color: #fff; display: grid; place-items: center;
+      font-weight: 700; border: 4px solid var(--paper); box-shadow: 0 0 0 1px rgba(183,138,74,.45);
+    }
+    .step h3 { margin: 0 0 8px; color: var(--navy); font-size: 1.05rem; }
+    .step p { margin: 0; color: var(--muted); font-size: .94rem; }
+    .note { margin-top: 22px; text-align: center; color: var(--muted); font-size: .95rem; }
+    .pricing { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+    .pricing .card { text-align: left; padding: 28px; }
+    .pricing .featured { border: 2px solid #1b3e6a; box-shadow: 0 14px 28px rgba(11,35,65,.08); }
+    .pricing h3 { font-size: 1.55rem; margin-bottom: 10px; }
+    .pricing ul { margin: 16px 0 0; padding-left: 20px; color: var(--muted); }
+    .pricing li { margin-bottom: 8px; }
+    .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .trust {
+      text-align: center; padding: 22px 16px; border: 1px solid var(--line);
+      border-radius: 18px; background: #fff;
+    }
+    .trust .icon { font-size: 2rem; color: var(--gold); margin-bottom: 10px; }
+    .trust h3 { color: var(--navy); margin: 0 0 8px; font-size: 1.05rem; }
+    .trust p { margin: 0; color: var(--muted); font-size: .94rem; }
+    .faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .faq-item {
+      overflow: hidden;
+    }
+    .faq-item summary,
+    .faq-toggle > summary {
+      padding: 22px 54px 22px 22px;
+      font-weight: 700;
+      color: var(--navy);
+      cursor: pointer;
+      list-style: none;
+      position: relative;
+      font-size: 1.02rem;
+      line-height: 1.45;
+    }
+    .faq-item summary::-webkit-details-marker,
+    .faq-toggle > summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after,
+    .faq-toggle > summary::after {
+      content: "+";
+      position: absolute;
+      right: 22px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gold);
+      font-size: 1.45rem;
+      line-height: 1;
+      font-weight: 700;
+    }
+    .faq-item[open] > summary::after,
+    .faq-toggle[open] > summary::after { content: "−"; }
+    .faq-item p {
+      margin: 0;
+      padding: 0 22px 22px;
+      color: var(--muted);
+      font-size: .95rem;
+      line-height: 1.6;
+    }
+    .faq-more {
+      margin-top: 22px;
+      text-align: center;
+    }
+    .faq-toggle {
+      text-align: left;
+      padding: 0;
+      display: block;
+    }
+    .faq-toggle .faq-inner {
+      padding: 0 18px 18px;
+    }
+    .cta-final {
+      background: var(--navy); color: #fff; text-align: center; padding: 64px 0;
+    }
+    .cta-final h2 { color: #fff; margin-bottom: 14px; }
+    .cta-final p {
+      color: rgba(255,255,255,.84); max-width: 760px; margin: 0 auto 24px;
+    }
+    footer {
+      background: #091b33; color: #fff; padding: 24px 0 34px;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: start;
+    }
+    .footer-links {
+      display: flex; flex-wrap: nowrap; justify-content: flex-end; align-items: center; gap: 14px;
+      white-space: nowrap;
+    }
+    .footer-links a { color: #fff; text-decoration: none; opacity: .9; font-size: .92rem; }
+    .legal {
+      margin-top: 10px; color: rgba(255,255,255,.75); font-size: .92rem; max-width: 760px; line-height: 1.65;
+    }
+    @media (max-width: 980px) {
+      .hero-grid, .compat-grid, .pricing, .faq-grid, .footer-grid { grid-template-columns: 1fr; }
+      .cards-6 { grid-template-columns: repeat(2, 1fr); }
+      .trust-grid { grid-template-columns: repeat(2, 1fr); }
+      .timeline { grid-template-columns: 1fr; }
+      .timeline::before { display: none; }
+      nav { display: none; }
+      .hero-visual img { min-height: 340px; }
+      .footer-links { justify-content: flex-start; flex-wrap: wrap; white-space: normal; }
+      .mini-icons { grid-template-columns: repeat(2, 1fr); }
+      .wrap { width: min(1120px, calc(100% - 36px)); }
+    }
+    @media (max-width: 640px) {
+      .cards-6, .trust-grid, .mini-icons, .faq-extra-grid { grid-template-columns: 1fr; }
+      h1 { line-height: 1.02; }
+      .lead { font-size: 1.12rem; }
+      .hero { padding-top: 34px; }
+      .hero-actions { flex-direction: column; }
+      .btn { text-align: center; }
+      .hero-note { position: static; margin: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap topbar">
+      <a href="#top" class="brand"><img src="assets/logo.png" alt="Supporto Tesi" /></a>
+      <nav>
+        <a href="#compatibilita">Compatibilità</a>
+        <a href="#servizio">Servizio</a>
+        <a href="#come-funziona">Come funziona</a>
+        <a href="#percorsi">Percorsi</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contatti" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.35)">Richiedi informazioni</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <h1>Supporto professionale per la tua tesi</h1>
+          <p class="lead">Un percorso guidato per lavorare con più metodo, più chiarezza e più sicurezza.</p>
+          <p>Ti aiutiamo a organizzare il lavoro di tesi, costruire indice e abstract, sviluppare capitoli ordinati, revisionare il testo e preparare una bozza da personalizzare e discutere con il relatore.</p>
+          <div class="hero-actions">
+            <a href="#contatti" class="btn btn-primary">Richiedi informazioni</a>
+            <a href="#compatibilita" class="btn btn-outline">Verifica se la tua tesi è compatibile</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Studente universitario in ambiente di studio ordinato">
+          <img src="assets/hero-supporto-tesi.png" alt="Studente universitario in un ambiente di studio elegante, con laptop, libri e appunti" />
+          <div class="hero-note">Supporto metodologico, strutturale, redazionale e di revisione.<br>Il servizio non sostituisce il lavoro personale dello studente.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="compatibilita">
+      <div class="wrap compat-grid">
+        <div class="soft-box">
+          <h2 style="text-align:left;margin-top:0">Per chi è adatto</h2>
+          <p style="color:var(--muted)">Il servizio è pensato soprattutto per tesi teoriche, compilative, bibliografiche e argomentative.</p>
+          <div class="mini-icons">
+            <div class="mini"><div class="icon">📄</div><div>Tesi teoriche</div></div>
+            <div class="mini"><div class="icon">📚</div><div>Tesi compilative</div></div>
+            <div class="mini"><div class="icon">📖</div><div>Tesi bibliografiche</div></div>
+            <div class="mini"><div class="icon">💬</div><div>Tesi argomentative</div></div>
+          </div>
+        </div>
+        <div class="warn-box">
+          <h2 style="text-align:left;margin-top:0">Compatibilità del servizio</h2>
+          <p style="margin:0;color:var(--text)"><strong>Non accettiamo tesi sperimentali, cliniche, statistiche, tecniche o scientifiche</strong> con dati, questionari, interviste, software, analisi quantitative, formule, codice o risultati da validare.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="servizio">
+      <div class="wrap">
+        <h2>Cosa include il servizio</h2>
+        <p class="section-intro">Una struttura chiara, ordinata e progressiva per aiutare lo studente a lavorare meglio sul proprio elaborato.</p>
+        <div class="cards-6">
+          <article class="card"><div class="icon">≡</div><h3>Indice</h3><p>Costruzione di un indice chiaro, logico e coerente con il tema.</p></article>
+          <article class="card"><div class="icon">📝</div><h3>Abstract</h3><p>Supporto alla costruzione o revisione dell’abstract, in italiano e, se richiesto, in inglese.</p></article>
+          <article class="card"><div class="icon">🔗</div><h3>Struttura dei capitoli</h3><p>Impostazione ordinata delle sezioni e sviluppo progressivo del lavoro.</p></article>
+          <article class="card"><div class="icon">🔎</div><h3>Revisione del testo</h3><p>Correzione e miglioramento di forma, stile e coerenza complessiva.</p></article>
+          <article class="card"><div class="icon">✒️</div><h3>Rifinitura</h3><p>Migliorie linguistiche e stilistiche per una presentazione più curata.</p></article>
+          <article class="card"><div class="icon">🗂️</div><h3>Organizzazione della bozza</h3><p>Bozza ordinata e pronta per essere personalizzata e discussa con il relatore.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="come-funziona" style="background:var(--bg)">
+      <div class="wrap">
+        <h2>Come funziona</h2>
+        <p class="section-intro">Il percorso viene sviluppato per fasi, in modo progressivo e coerente con lo stato del lavoro.</p>
+        <div class="timeline">
+          <div class="step"><div class="num">1</div><h3>Analisi del tema</h3><p>Studiamo tema, materiali e obiettivi per impostare il lavoro.</p></div>
+          <div class="step"><div class="num">2</div><h3>Costruzione dell’indice</h3><p>Definiamo una struttura ordinata, logica e sostenibile.</p></div>
+          <div class="step"><div class="num">3</div><h3>Sviluppo guidato della bozza</h3><p>Il lavoro prende forma in modo ordinato e progressivo.</p></div>
+          <div class="step"><div class="num">4</div><h3>Revisione del testo</h3><p>Controlliamo contenuti, forma, chiarezza e coerenza.</p></div>
+          <div class="step"><div class="num">5</div><h3>Rifinitura finale</h3><p>Rifiniamo il testo e organizziamo la bozza prima dell’uso finale.</p></div>
+        </div>
+        <div class="note">I tempi sono orientativi e dipendono anche dai riscontri del relatore.</div>
+      </div>
+    </section>
+
+    <section id="percorsi">
+      <div class="wrap">
+        <h2>Percorsi disponibili</h2>
+        <p class="section-intro">Entrambi i percorsi sono professionali. La differenza riguarda il livello di accompagnamento, non la serietà del servizio.</p>
+        <div class="pricing">
+          <article class="card">
+            <h3>Supporto Tesi Standard</h3>
+            <p>Per chi cerca un percorso essenziale, ordinato e completo.</p>
+            <ul>
+              <li>Percorso strutturato per fasi</li>
+              <li>Indice, abstract e organizzazione della bozza</li>
+              <li>Revisione del testo</li>
+              <li>Rifinitura e comunicazione chiara</li>
+            </ul>
+          </article>
+          <article class="card featured">
+            <h3>Supporto Tesi Pro</h3>
+            <p>Per chi desidera maggiore accompagnamento, più revisioni e una rifinitura più approfondita.</p>
+            <ul>
+              <li>Tutto ciò che include il percorso Standard</li>
+              <li>Maggiore affiancamento nelle fasi di sviluppo</li>
+              <li>Più cicli di revisione e perfezionamento</li>
+              <li>Rifinitura più approfondita di forma e stile</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>Perché scegliere Supporto Tesi</h2>
+        <p class="section-intro">Una pagina ufficiale pensata per dare ordine, credibilità e filtro corretto ai contatti generati da collaboratori, social e passaparola.</p>
+        <div class="trust-grid">
+          <div class="trust"><div class="icon">🛡️</div><h3>Approccio etico</h3><p>Lavoriamo nel rispetto dell’integrità accademica e del ruolo centrale dello studente.</p></div>
+          <div class="trust"><div class="icon">📋</div><h3>Lavoro strutturato per fasi</h3><p>Un metodo chiaro e progressivo che garantisce ordine, coerenza e continuità.</p></div>
+          <div class="trust"><div class="icon">🎯</div><h3>Maggiore chiarezza e ordine</h3><p>Trasformiamo idee e materiali in una struttura solida e comprensibile.</p></div>
+          <div class="trust"><div class="icon">👥</div><h3>Bozza da personalizzare</h3><p>Il lavoro è pensato per essere verificato e discusso con il relatore.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" style="background:var(--bg)">
+      <div class="wrap">
+        <h2>FAQ</h2>
+        <p class="section-intro">Domande essenziali per chiarire subito il perimetro del servizio.</p>
+        <div class="faq-grid">
+          <details class="faq-item"><summary>Scrivete la tesi al posto mio?</summary><p>No. Il servizio non sostituisce il lavoro personale dello studente. Offre supporto metodologico, strutturale, redazionale e di revisione.</p></details>
+          <details class="faq-item"><summary>Il servizio è adatto a tutte le tesi?</summary><p>No. È adatto soprattutto a tesi teoriche, compilative, bibliografiche e argomentative. Le tesi sperimentali, cliniche, statistiche, tecniche o scientifiche non rientrano nel perimetro ordinario del servizio.</p></details>
+          <details class="faq-item"><summary>Quanto durano i tempi?</summary><p>I tempi sono orientativi e dipendono dallo stato del lavoro, dai materiali disponibili e anche dai riscontri del relatore.</p></details>
+          <details class="faq-item"><summary>Come si attiva il percorso?</summary><p>Dopo il primo contatto, il caso viene valutato. Se compatibile, viene proposto il percorso più adatto e si passa poi alla parte documentale e operativa.</p></details>
+        </div>
+        <div class="faq-more">
+          <details class="soft-box faq-toggle">
+            <summary>Approfondisci le FAQ</summary>
+            <div class="faq-inner">
+              <div class="faq-grid">
+                <details class="faq-item"><summary>Il servizio è adatto a tesi triennali e magistrali?</summary><p>Sì. Il servizio può essere utile sia per tesi triennali sia per tesi magistrali, purché il lavoro rientri nel perimetro compatibile del supporto e non richieda attività sperimentali, cliniche, statistiche o tecniche escluse.</p></details>
+                <details class="faq-item"><summary>In quale fase della tesi conviene contattarvi?</summary><p>Il servizio può essere utile sia all’inizio, quando il lavoro va ancora impostato, sia in una fase intermedia o avanzata, quando occorre riorganizzare, chiarire o revisionare il materiale già esistente.</p></details>
+                <details class="faq-item"><summary>Posso chiedere supporto se ho già iniziato a scrivere?</summary><p>Sì. Il servizio può essere utile anche quando esistono già materiali, capitoli o bozze da riorganizzare, chiarire o revisionare in modo più ordinato.</p></details>
+                <details class="faq-item"><summary>Posso contattarvi anche se ho solo il titolo o l’argomento?</summary><p>Sì. Possiamo valutare il caso anche se il lavoro è ancora in una fase iniziale, purché ci siano informazioni sufficienti per capire stato del percorso, obiettivo e compatibilità del servizio.</p></details>
+                <details class="faq-item"><summary>Il relatore resta il riferimento principale del lavoro?</summary><p>Sì. Il relatore resta sempre il riferimento accademico principale. Il servizio aiuta lo studente a lavorare meglio sul proprio elaborato, ma non sostituisce il rapporto con il relatore.</p></details>
+                <details class="faq-item"><summary>Il servizio include la revisione dell’indice?</summary><p>Sì. Nei casi compatibili, il supporto può comprendere anche la costruzione o la revisione dell’indice, per dare al lavoro una struttura più logica e coerente.</p></details>
+                <details class="faq-item"><summary>Il servizio include il supporto per abstract e introduzione?</summary><p>Sì. A seconda del percorso, il supporto può riguardare anche abstract, introduzione e altre sezioni utili a dare ordine complessivo all’elaborato.</p></details>
+                <details class="faq-item"><summary>Posso ricevere aiuto per riorganizzare capitoli già scritti?</summary><p>Sì. Se il materiale è compatibile con il servizio, possiamo aiutarti a riorganizzare e chiarire capitoli già esistenti, migliorandone coerenza, ordine e leggibilità.</p></details>
+                <details class="faq-item"><summary>È possibile lavorare una sezione alla volta?</summary><p>Sì. Il percorso può essere gestito anche in modo progressivo, lavorando per fasi o per sezioni, secondo il caso e il tipo di supporto necessario.</p></details>
+                <details class="faq-item"><summary>Il servizio è utile anche se ho materiali disordinati?</summary><p>Sì. Uno degli obiettivi principali del servizio è proprio aiutare lo studente a dare struttura, chiarezza e ordine a materiali ancora poco organizzati.</p></details>
+                <details class="faq-item"><summary>Posso richiedere solo una revisione del testo?</summary><p>Sì. Nei casi compatibili può essere valutato anche un intervento mirato di revisione, se coerente con lo stato del lavoro e con il tipo di supporto richiesto.</p></details>
+                <details class="faq-item"><summary>Posso usare il servizio se il relatore mi ha già chiesto correzioni?</summary><p>Sì. Il supporto può essere utile anche quando il relatore ha già indicato modifiche o correzioni da affrontare in modo più ordinato e consapevole.</p></details>
+                <details class="faq-item"><summary>Il servizio è compatibile con tesi in lingua inglese?</summary><p>Può essere valutato nei casi compatibili, soprattutto se il supporto richiesto resta metodologico, strutturale o redazionale e non riguarda contenuti tecnici esclusi dal servizio.</p></details>
+                <details class="faq-item"><summary>Il servizio segue le linee guida dell’università?</summary><p>Il supporto può tenere conto delle indicazioni formali e organizzative fornite dallo studente o dal relatore, purché siano trasmesse in modo chiaro e compatibile con il perimetro del servizio.</p></details>
+                <details class="faq-item"><summary>Dopo il supporto ricevo una bozza da personalizzare?</summary><p>Sì. Il senso del percorso è aiutarti a costruire una bozza più ordinata, chiara e coerente, da verificare, personalizzare e discutere con il relatore.</p></details>
+                <details class="faq-item"><summary>Come viene valutata la compatibilità della mia tesi?</summary><p>La compatibilità viene valutata in base al tipo di tesi, alla natura del supporto richiesto, allo stato del lavoro e all’eventuale presenza di elementi tecnici, sperimentali o specialistici esclusi.</p></details>
+                <details class="faq-item"><summary>Cosa succede dopo il primo contatto?</summary><p>Dopo il primo contatto vengono raccolte le informazioni essenziali. Se il caso risulta compatibile, viene proposto il percorso più adatto e si passa poi alla fase documentale e operativa.</p></details>
+                <details class="faq-item"><summary>Quali materiali devo inviare per iniziare?</summary><p>Di norma possono essere richiesti argomento o titolo provvisorio, eventuale indice, indicazioni del relatore, stato del lavoro, materiali già disponibili e difficoltà principale riscontrata.</p></details>
+                <details class="faq-item"><summary>Il percorso si svolge online?</summary><p>Sì. Il servizio è organizzato a distanza, con comunicazioni scritte e, se previsto, ulteriori modalità operative concordate.</p></details>
+                <details class="faq-item"><summary>Come vengono gestiti tempi e avanzamento del lavoro?</summary><p>Il lavoro procede per fasi. Le tempistiche sono orientative e dipendono dallo stato iniziale del lavoro, dai materiali forniti e anche dai riscontri del relatore.</p></details>
+                <details class="faq-item"><summary>Posso attivare il servizio anche se ho una scadenza vicina?</summary><p>Dipende dal caso. La richiesta può essere valutata, ma la compatibilità concreta dipende dallo stato del lavoro, dai materiali disponibili e dai tempi residui effettivi.</p></details>
+                <details class="faq-item"><summary>Il servizio è adatto anche a tesine o elaborati finali?</summary><p>Sì, purché si tratti di lavori compatibili con un supporto metodologico, strutturale, redazionale e di revisione e non di richieste escluse dal servizio.</p></details>
+                <details class="faq-item"><summary>Come capisco se per me è più adatto Standard o Pro?</summary><p>La scelta dipende dal livello di accompagnamento necessario, dallo stato della tesi, dal numero di passaggi richiesti e dal grado di revisione o rifinitura utile al tuo caso.</p></details>
+                <details class="faq-item"><summary>Posso fare una prima richiesta senza impegno?</summary><p>Sì. Il primo contatto serve proprio a capire se il caso è compatibile e quale percorso potrebbe essere più adatto, prima dell’eventuale attivazione del servizio.</p></details>
+                <details class="faq-item"><summary>I miei materiali e i miei dati vengono trattati in modo riservato?</summary><p>Sì. I materiali e i dati vengono gestiti secondo l’informativa privacy e nell’ambito strettamente necessario alla valutazione e all’eventuale erogazione del servizio.</p></details>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contatti" class="cta-final">
+      <div class="wrap">
+        <h2>Lavora alla tua tesi con più ordine e metodo</h2>
+        <p>Questa pagina nasce per accompagnare collaboratori, passaparola e contatti diretti con una presentazione ufficiale, coerente e già allineata ai documenti del servizio.</p>
+        <a href="#" class="btn btn-gold">Scopri il percorso più adatto alla tua tesi</a>
+        <div class="contact-placeholders">
+          <a href="#" class="contact-chip"><span class="icon">✉️</span><span>Email in attivazione</span></a>
+          <a href="#" class="contact-chip"><span class="icon">🟢</span><span>WhatsApp in attivazione</span></a>
+        </div>
+        <div class="contact-note">I contatti diretti verranno inseriti nella versione finale della pagina.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <a href="#top" class="brand"><img src="assets/logo.png" alt="Supporto Tesi" /></a>
+        <div class="legal">Supporto metodologico, strutturale, redazionale e di revisione.<br>Il servizio non sostituisce il lavoro personale dello studente.</div>
+      </div>
+      <div class="footer-links">
+        <a href="pdf/Informazioni_precontrattuali_Supporto_Tesi.pdf" target="_blank" rel="noopener">Informazioni precontrattuali</a>
+        <a href="pdf/Condizioni_del_servizio_Supporto_Tesi.pdf" target="_blank" rel="noopener">Condizioni del servizio</a>
+        <a href="pdf/Informativa_privacy_Supporto_Tesi.pdf" target="_blank" rel="noopener">Privacy</a>
+        <a href="#contatti">Contatti</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
